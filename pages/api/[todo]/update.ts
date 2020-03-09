@@ -7,11 +7,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     where: { id: req.query.todo as string }
   });
 
-  if (req.query.week === "week_1") {
-    await prisma.todos.update({
-      where: { id: todo.id },
-      data: { text: req.body.text }
-    });
-  }
+  await prisma.todos.update({
+    where: { id: todo.id },
+    data: { text: req.body.text }
+  });
+
   res.json({ todo });
 };
