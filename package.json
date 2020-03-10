@@ -10,7 +10,9 @@
     "dev": "next",
     "build": "next build",
     "now-build": "next build && prisma2 generate",
-    "start": "next start"
+    "start": "next start",
+    "migrate:save": "prisma2 migrate up --experimental",
+    "migrate:up": "prisma2 migrate up --experimental"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
