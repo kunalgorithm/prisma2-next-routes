@@ -4,12 +4,11 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://postgres:postgres@localhost:5432/template1"
+  url = "***"
 }
 
 model todos {
   id   String  @id @default(cuid())
   text String
   done Boolean @default(false)
-  createdAt DateTime @default(now())
 }

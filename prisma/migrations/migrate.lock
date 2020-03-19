@@ -6,3 +6,7 @@
 20200309140708-add-todo
 20200309141504-rename-todo-to-todos
 20200309175322-done-boolean
+20200309232224-change-todo-id-to-autoincremented-int
+20200311135001-change-id-to-int
+20200318201658-change-id-to-cuid-string
+20200318204409-add-created-at
