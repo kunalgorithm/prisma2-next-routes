@@ -1,4 +1,8 @@
-# Nextjs Routes App
+# Prisma2 Next Todos
+
+A monorepo todo app built with prisma2, nextjs API routes, and ant design dark mode ✨
+
+![Screenshot](public/screenshot.png)
 
 The app is built with [next](https://nextjs.org), and consequently all the action happens in the `pages` directory.
 

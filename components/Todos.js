@@ -3,11 +3,6 @@ import { useState } from "react";
 export default ({ todos, setTodos }) => {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Todo</th>
-        </tr>
-      </thead>
       <tbody>
         {todos.map(todo => (
           <tr
