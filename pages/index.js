@@ -4,6 +4,7 @@ require("es6-promise").polyfill();
 import fetch from "isomorphic-unfetch";
 import Todos from "../components/Todos";
 import { v4 as uuidv4 } from "uuid";
+import { Button } from "antd";
 
 export async function getServerSideProps() {
   const response = await fetch(`http://localhost:3000/api/todos`);
@@ -16,17 +17,17 @@ const Page = ({ todos: todosInput, status }) => {
   const [todos, setTodos] = useState(todosInput);
   const [input, setInput] = useState("");
   return status === 200 ? (
-    <div>
-      <style jsx>{`
-        margin: 5px;
-        padding: 5px;
-        input {
-          border-radius: 2px;
-        }
-        button {
-          border-radius: 2px;
-        }
-      `}</style>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+
+        height: "100vh"
+      }}
+    >
+      <h1>Todos</h1>
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -42,8 +43,12 @@ const Page = ({ todos: todosInput, status }) => {
           setInput("");
         }}
       >
-        <input value={input} onChange={e => setInput(e.target.value)}></input>
-        <button type="submit">Create </button>
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          style={{ marginTop: "20px", marginBottom: "40px" }}
+        ></input>
+        <Button>Create </Button>
       </form>
 
       <Todos todos={todos} setTodos={setTodos} />
